@@ -1,0 +1,101 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif; /* Humanist font for Frutiger vibe */
+}
+
+body {
+    background: linear-gradient(135deg, #a8ffdb, #b3d9ff); /* Soft green-blue gradient */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Glass Navigation Bar */
+.glass-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); /* Glass effect */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.glass-nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.glass-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.glass-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.glass-nav a:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Main Content */
+.container {
+    margin-top: 100px; /* Space for fixed nav */
+    text-align: center;
+    color: #fff;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+/* Glossy Tiles */
+.tile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.tile {
+    background: linear-gradient(135deg, rgba(0, 255, 150, 0.2), rgba(0, 150, 255, 0.2));
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px); /* Glass effect */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tile p {
+    font-size: 1.2em;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.tile:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, rgba(0, 255, 150, 0.4), rgba(0, 150, 255, 0.4));
+}
