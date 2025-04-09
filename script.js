@@ -1,13 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
-    const hamburger = document.querySelector 
-   
-('.hamburger');
+    const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
     hamburger.addEventListener('click', () => {
+        const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !isExpanded);
         navMenu.classList.toggle('active');
         hamburger.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.glass-nav') && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
     });
 
     // Smooth scrolling for navigation
@@ -25,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
             } else {
                 window.location.href = targetId;
             }
@@ -44,19 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // CTA button effects
-    const ctaButtons = document.querySelectorAll('.cta-btn');
-    ctaButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            if (!button.getAttribute('href').startsWith('#')) return;
-            e.preventDefault();
-            button.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                button.style.transform = 'scale(1)';
-            }, 200);
-        });
-    });
-
     // Language switcher
     const langButtons = document.querySelectorAll('.lang-btn');
     const translatableElements = document.querySelectorAll('[data-en][data-hu]');
@@ -66,11 +63,16 @@ document.addEventListener('DOMContentLoaded', function() {
         body.setAttribute('data-lang', lang);
         
         translatableElements.forEach(element => {
-            element.textContent = element.getAttribute(`data-${lang}`);
+            const text = element.getAttribute(`data-${lang}`);
+            if (text) {
+                element.textContent = text;
+            }
         });
 
         langButtons.forEach(btn => btn.classList.remove('active'));
-        document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+        const activeBtn = document.querySelector(`.lang-btn[data-lang="${lang}"]`);
+        if (activeBtn) activeBtn.classList.add('active');
+        
         fetchTrackTitle();
     }
 
@@ -92,30 +94,55 @@ document.addEventListener('DOMContentLoaded', function() {
     const stopBtn = document.getElementById('stop');
     const volumeSlider = document.getElementById('volume');
     const trackName = document.getElementById('track-name');
+    let trackUpdateInterval;
 
-    audio.volume = volumeSlider.value;
-    audio.play().then(() => {
-        playBtn.textContent = '⏸';
-    }).catch(e => {
-        console.log('Autoplay prevented:', e);
+    // Initialize audio
+    function initAudio() {
+        audio.volume = volumeSlider.value;
+        
+        // Try autoplay with user gesture
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                playBtn.textContent = '⏸';
+            }).catch(e => {
+                console.log('Autoplay prevented:', e);
+                handlePlayError();
+            });
+        }
+    }
+
+    function handlePlayError() {
         playBtn.textContent = '⏵';
         const lang = body.getAttribute('data-lang');
         trackName.textContent = lang === 'hu' 
             ? 'Kattints a lejátszás gombra a vaporwave rádió indításához!' 
             : 'Click play to start the vaporwave radio!';
-        setTimeout(() => fetchTrackTitle(), 5000);
-    });
+        
+        // Clear any existing interval
+        if (trackUpdateInterval) {
+            clearInterval(trackUpdateInterval);
+        }
+    }
 
     playBtn.addEventListener('click', () => {
         if (audio.paused) {
             audio.play().then(() => {
                 playBtn.textContent = '⏸';
+                // Start track updates when playback starts
+                fetchTrackTitle();
+                trackUpdateInterval = setInterval(fetchTrackTitle, 60000);
             }).catch(e => {
                 console.log('Play failed:', e);
+                handlePlayError();
             });
         } else {
             audio.pause();
             playBtn.textContent = '⏵';
+            // Clear interval when paused
+            if (trackUpdateInterval) {
+                clearInterval(trackUpdateInterval);
+            }
         }
     });
 
@@ -123,6 +150,10 @@ document.addEventListener('DOMContentLoaded', function() {
         audio.pause();
         audio.currentTime = 0;
         playBtn.textContent = '⏵';
+        // Clear interval when stopped
+        if (trackUpdateInterval) {
+            clearInterval(trackUpdateInterval);
+        }
     });
 
     volumeSlider.addEventListener('input', () => {
@@ -141,17 +172,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.json();
             })
             .then(data => {
-                const currentTrack = data.channels[0].now_playing;
-                const lang = body.getAttribute('data-lang');
-                trackName.textContent = lang === 'hu' 
-                    ? `${currentTrack.artist} - ${currentTrack.title}` 
-                    : `${currentTrack.artist} - ${currentTrack.title}`;
+                if (data.channels && data.channels.length > 0) {
+                    const currentTrack = data.channels[0].now_playing;
+                    trackName.textContent = `${currentTrack.artist} - ${currentTrack.title}`;
+                    trackName.style.color = '';
+                } else {
+                    throw new Error('No channel data available');
+                }
             })
             .catch(error => {
-                console.error('Track fetch failed:', {
-                    message: error.message,
-                    status: error.status || 'N/A'
-                });
+                console.error('Track fetch failed:', error);
                 const lang = body.getAttribute('data-lang');
                 trackName.textContent = lang === 'hu' 
                     ? 'SomaFM Vaporwaves - Pihentető Hullámok' 
@@ -163,8 +193,9 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
+    // Initialize track info
     fetchTrackTitle();
-    setInterval(fetchTrackTitle, 60000);
+    trackUpdateInterval = setInterval(fetchTrackTitle, 60000);
 
     // Dark mode toggle
     const darkModeToggle = document.querySelector('.dark-mode-toggle');
@@ -191,10 +222,16 @@ document.addEventListener('DOMContentLoaded', function() {
         updateDarkMode(!body.classList.contains('dark-mode'));
     });
 
+    // Check for dark mode preference
     const darkModePref = localStorage.getItem('darkMode');
     if (darkModePref === 'enabled') {
         updateDarkMode(true);
+    } else if (darkModePref === 'disabled') {
+        updateDarkMode(false);
     } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         updateDarkMode(true);
     }
+
+    // Initialize audio after everything is ready
+    initAudio();
 });
