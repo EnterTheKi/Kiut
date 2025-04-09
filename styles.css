@@ -88,6 +88,9 @@ body.dark-mode .glass-nav .logo {
     color: #2a4c40;
     flex-shrink: 0;
     transition: all 0.3s ease;
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
 }
 
 .hamburger.active {
@@ -699,6 +702,116 @@ body.dark-mode .audio-fallback {
     background: rgba(50, 50, 50, 0.6);
 }
 
+/* Image Containers */
+.glossy {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* Image fallback styles */
+img {
+    aspect-ratio: attr(width) / attr(height);
+    background: linear-gradient(135deg, #c8e0d2, #b8d6c2);
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    text-align: center;
+}
+
+img:before {
+    content: "Image missing: " attr(alt);
+    display: block;
+    padding: 10px;
+    border: 1px dashed #00ffff;
+    color: #2a4c40;
+}
+
+body.dark-mode img:before {
+    color: #d0e8d5;
+}
+
+/* Specific Image Sizing */
+.hero-image {
+    width: 100%;
+    max-height: 500px;
+    margin: 20px 0;
+}
+
+.coffee-image {
+    width: 100%;
+    height: 200px;
+}
+
+.vibe-tile img {
+    width: 100%;
+    height: 250px;
+}
+
+/* ---- COFFEE MENU STYLES ---- */
+.tile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.tile {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid #e0f8ff;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(173, 216, 230, 0.3);
+}
+
+/* Image Effects */
+.pixel-border {
+    border: 2px dashed #00ffff;
+    filter: sepia(30%) hue-rotate(-10deg);
+    height: 200px;
+    object-fit: cover;
+}
+
+.aero-glow {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    border-radius: 5px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.crt-glow {
+    animation: crt-flicker 4s infinite alternate;
+    border: 1px solid #94f0f0;
+}
+
+@keyframes crt-flicker {
+    0% { opacity: 0.9; }
+    100% { opacity: 1; }
+}
+
+/* Menu Headers */
+h3 {
+    color: #00ffff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+    font-family: 'Courier New', monospace;
+    margin-top: 40px;
+    position: relative;
+}
+
+h3:before {
+    content: '>';
+    position: absolute;
+    left: -20px;
+    color: #ff00ff;
+}
+
 @media (max-width: 1200px) {
     .glass-nav,
     .music-nav,
@@ -896,5 +1009,20 @@ body.dark-mode .audio-fallback {
     
     h3 {
         font-size: 1.8rem;
+    }
+    
+    /* For mobile responsiveness */
+    @media (max-width: 768px) {
+        .hero-image {
+            max-height: 300px;
+        }
+        
+        .coffee-image {
+            height: 150px;
+        }
+        
+        .vibe-tile img {
+            height: 180px;
+        }
     }
 }
