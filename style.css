@@ -1,203 +1,32 @@
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
+// Smooth Scrolling for Navigation
+document.querySelectorAll('.nav-btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+    });
+});
 
-body {
-    background: linear-gradient(135deg, #a8ffdb, #b3d9ff, #fff3e6); /* Green-blue to creamy beige */
-    min-height: 100vh;
-    overflow-x: hidden;
-    color: #fff;
-}
+// Tile Click Effects
+const tiles = document.querySelectorAll('.tile, .vibe-tile');
+tiles.forEach(tile => {
+    tile.addEventListener('click', () => {
+        tile.style.boxShadow = '0 6px 25px rgba(0, 255, 150, 0.5)';
+        setTimeout(() => {
+            tile.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
+        }, 300);
+    });
+});
 
-/* Glass Navigation Bar */
-.glass-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    max-width: 1200px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-}
-
-.glass-nav .logo {
-    font-size: 1.8em;
-    font-weight: bold;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #00ff96, #00b4ff);
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.glass-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-
-.nav-btn {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
-}
-
-.nav-btn:hover {
-    background: rgba(0, 255, 150, 0.3);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 255, 150, 0.4);
-}
-
-/* Sections */
-.section {
-    padding: 100px 20px;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.container {
-    max-width: 1200px;
-    text-align: center;
-}
-
-h1 {
-    font-size: 3em;
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #00ff96, #00b4ff);
-    -webkit-background-clip: text;
-    color: transparent;
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 2.5em;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin-bottom: 30px;
-}
-
-.subtitle, .description {
-    font-size: 1.2em;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    margin-bottom: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px 20px;
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
-}
-
-/* Placeholder Boxes */
-.placeholder-box {
-    width: 100%;
-    max-width: 200px;
-    height: 150px;
-    background: linear-gradient(135deg, rgba(0, 255, 150, 0.3), rgba(0, 150, 255, 0.3));
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 15px;
-    margin: 0 auto 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-}
-
-.hero-placeholder {
-    max-width: 400px;
-    height: 250px;
-    margin-bottom: 30px;
-}
-
-/* Call-to-Action Button */
-.cta-btn {
-    display: inline-block;
-    padding: 15px 30px;
-    background: linear-gradient(135deg, #00ff96, #00b4ff);
-    border-radius: 15px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2em;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    transition: all 0.3s ease;
-}
-
-.cta-btn:hover {
-    transform: scale(1.05);
-    background: linear-gradient(135deg, #00ff96, #00d4ff);
-    box-shadow: 0 6px 20px rgba(0, 255, 150, 0.5);
-}
-
-/* Tile Grids */
-.tile-grid, .vibe-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    padding: 0 20px;
-}
-
-.tile, .vibe-tile {
-    background: linear-gradient(135deg, rgba(0, 255, 150, 0.2), rgba(0, 150, 255, 0.2));
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.tile p, .vibe-tile p {
-    font-size: 1.1em;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-.tile:hover, .vibe-tile:hover {
-    transform: scale(1.05);
-    background: linear-gradient(135deg, rgba(0, 255, 150, 0.4), rgba(0, 150, 255, 0.4));
-}
-
-/* Contact Form */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.glass-input {
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
-    color: #fff;
-    font-size: 1em;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.glass-input:focus {
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 10px rgba(0, 255, 150, 0.3);
-}
-
-.glass-input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-textarea.glass-input {
-    min-height: 120px;
-    resize: vertical;
-}
+// CTA Button Pulse on Click
+const ctaButtons = document.querySelectorAll('.cta-btn');
+ctaButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault(); // Remove this if you want real navigation
+        button.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            button.style.transform = 'scale(1)';
+        }, 200);
+    });
+});
