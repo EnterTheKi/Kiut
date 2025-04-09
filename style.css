@@ -33,6 +33,9 @@ body {
     font-size: 1.8em;
     font-weight: bold;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #00ff96, #00b4ff);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .glass-nav ul {
@@ -47,12 +50,14 @@ body {
     padding: 10px 20px;
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
 }
 
 .nav-btn:hover {
     background: rgba(0, 255, 150, 0.3);
     transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 255, 150, 0.4);
 }
 
 /* Sections */
@@ -72,11 +77,15 @@ body {
 h1 {
     font-size: 3em;
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #00ff96, #00b4ff);
+    -webkit-background-clip: text;
+    color: transparent;
     margin-bottom: 20px;
 }
 
 h2 {
     font-size: 2.5em;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin-bottom: 30px;
 }
 
@@ -84,16 +93,29 @@ h2 {
     font-size: 1.2em;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
 }
 
-/* Hero Image */
-.hero-image img {
+/* Placeholder Boxes */
+.placeholder-box {
     width: 100%;
-    max-width: 600px;
-    border-radius: 20px;
+    max-width: 200px;
+    height: 150px;
+    background: linear-gradient(135deg, rgba(0, 255, 150, 0.3), rgba(0, 150, 255, 0.3));
     border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    opacity: 0.9;
+    border-radius: 15px;
+    margin: 0 auto 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.hero-placeholder {
+    max-width: 400px;
+    height: 250px;
+    margin-bottom: 30px;
 }
 
 /* Call-to-Action Button */
@@ -106,12 +128,14 @@ h2 {
     text-decoration: none;
     font-size: 1.2em;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     transition: all 0.3s ease;
 }
 
 .cta-btn:hover {
     transform: scale(1.05);
     background: linear-gradient(135deg, #00ff96, #00d4ff);
+    box-shadow: 0 6px 20px rgba(0, 255, 150, 0.5);
 }
 
 /* Tile Grids */
@@ -131,14 +155,6 @@ h2 {
     backdrop-filter: blur(5px);
     transition: all 0.3s ease;
     cursor: pointer;
-}
-
-.tile img, .vibe-tile img {
-    width: 100%;
-    max-width: 150px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    opacity: 0.85;
 }
 
 .tile p, .vibe-tile p {
@@ -174,6 +190,7 @@ h2 {
 
 .glass-input:focus {
     background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 255, 150, 0.3);
 }
 
 .glass-input::placeholder {
