@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>K i ū t - Your Cafe Escape</title>
+    <meta name="description" content="A retro-themed café in Budapest, Hungary offering a quiet escape with vintage computers and vaporwave vibes">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="/assets/images/kiut-fav.png">
 </head>
 <body data-lang="en">
     <nav class="glass-nav">
         <div class="logo">[ESC] K i ū t</div>
-        <div class="hamburger">☰</div>
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
         <ul class="nav-menu">
             <li><a href="#home" class="nav-btn glossy" data-en="Home" data-hu="Kezdőlap">Home</a></li>
             <li><a href="#coffees" class="nav-btn glossy" data-en="Coffees" data-hu="Kávék">Coffees</a></li>
@@ -28,34 +29,62 @@
         <div class="container">
             <h1 data-en="Find Your Focus in the Heart of Hungary" data-hu="Találd meg a fókuszodat Magyarország szívében">Find Your Focus in the Heart of Hungary</h1>
             <p class="subtitle embossed" data-en="Welcome to Kiūt Café, a quiet place where you can escape the noise and distractions of the outside world. Here, you can concentrate fully and get your best work done." data-hu="Üdvözlünk a Kiút Kávézóban, egy csendes helyen, ahol elmenekülhetsz a külvilág zajától és zavaró tényezőitől. Itt teljes mértékben koncentrálhatsz és elvégezheted a legjobb munkádat.">Welcome to Kiūt Café, a quiet place where you can escape the noise and distractions of the outside world. Here, you can concentrate fully and get your best work done.</p>
-            <div class="placeholder-box glossy hero-placeholder"></div>
+            <img src="assets/images/kiut-interior.png" alt="Kiūt Café interior showing retro computers and cozy seating" class="glossy hero-image" width="800" height="500">
             <a href="#visit" class="cta-btn glossy" data-en="Visit The Nostalgia Café" data-hu="Látogasd meg a Nosztalgia Kávézót">Visit The Nostalgia Café</a>
         </div>
     </section>
 
     <section id="coffees" class="section">
         <div class="container">
-            <h2 data-en="Coffees" data-hu="Kávék">Coffees</h2>
-            <h3 data-en="Strong Coffees" data-hu="Erős Kávék">Strong Coffees</h3>
+            <h2 data-en="Digital Brews" data-hu="Digitális Főzetek">Digital Brews</h2>
+            
+            <!-- STRONG COFFEES -->
+            <h3 data-en="> System Overclock (Strong)" data-hu="> Rendszerfelülmérés (Erős)">> System Overclock (Strong)</h3>
             <div class="tile-grid">
                 <div class="tile glossy">
-                    <div class="placeholder-box glossy"></div>
-                    <p><strong data-en="Espresso" data-hu="Eszpresszó">Espresso</strong><br><span data-en="A strong, concentrated coffee made by forcing hot water through finely-ground coffee beans. It's the base for many other coffee drinks." data-hu="Erős, koncentrált kávé, amelyet forró víz finomra őrölt kávébabokon keresztül történő préselésével készítenek. Sok más kávéital alapja.">A strong, concentrated coffee made by forcing hot water through finely-ground coffee beans. It's the base for many other coffee drinks.</span><br><em data-en="Taste: Rich and intense with a bold flavor." data-hu="Íz: Gazdag és intenzív, merész ízzel.">Taste: Rich and intense with a bold flavor.</em></p>
+                    <img src="assets/images/espresso.png" alt="Pixelated espresso cup" class="pixel-border" width="300" height="200">
+                    <p><strong data-en="Espresso 'Glitch'" data-hu="Eszpresszó 'Glitch'">Espresso 'Glitch'</strong><br>
+                    <span data-en="A pixel-perfect shot of pure energy. Like a CRT screen firing up." 
+                          data-hu="Tiszta energia pixeltökéletes lövetetben. Mint egy CRT monitor indulása.">A pixel-perfect shot of pure energy. Like a CRT screen firing up.</span><br>
+                    <em data-en="Taste: Sharp digital buzz" data-hu="Íz: Éles digitális zümmögés">Taste: Sharp digital buzz</em></p>
                 </div>
                 <div class="tile glossy">
-                    <div class="placeholder-box glossy"></div>
-                    <p><strong data-en="Ristretto" data-hu="Ristretto">Ristretto</strong><br><span data-en="A shorter, more concentrated shot of espresso, made with the same amount of coffee but half the amount of water." data-hu="Rövidebb, koncentráltabb eszpresszó, ugyanannyi kávéval, de feleannyi vízzel elkészítve.">A shorter, more concentrated shot of espresso, made with the same amount of coffee but half the amount of water.</span><br><em data-en="Taste: Stronger and more intense than a regular espresso, with a richer flavor." data-hu="Íz: Erősebb és intenzívebb, mint a szokásos eszpresszó, gazdagabb ízzel.">Taste: Stronger and more intense than a regular espresso, with a richer flavor.</em></p>
+                    <img src="assets/images/ristretto.png" alt="Ristretto in retro cup" class="pixel-border" width="300" height="200">
+                    <p><strong data-en="Ristretto 'DOS Mode'" data-hu="Ristretto 'DOS Mód'">Ristretto 'DOS Mode'</strong><br>
+                    <span data-en="Concentrated like a 90s command prompt—no fluff." 
+                          data-hu="Koncentrált, mint egy 90-es évekbeli parancssor—felesleg nélkül.">Concentrated like a 90s command prompt—no fluff.</span><br>
+                    <em data-en="Taste: Raw processing power" data-hu="Íz: Nyers számítási teljesítmény">Taste: Raw processing power</em></p>
                 </div>
             </div>
-            <h3 data-en="Normal Coffees" data-hu="Normál Kávék">Normal Coffees</h3>
+
+            <!-- NORMAL COFFEES -->
+            <h3 data-en="> Background Tasks (Smooth)" data-hu="> Háttérfolyamatok (Lágy)">> Background Tasks (Smooth)</h3>
             <div class="tile-grid">
                 <div class="tile glossy">
-                    <div class="placeholder-box glossy"></div>
-                    <p><strong data-en="Latte" data-hu="Latte">Latte</strong><br><span data-en="Made with one shot of espresso and steamed milk, topped with a small amount of milk foam." data-hu="Egy adag eszpresszóból és gőzölt tejből készül, kevés tejhabbal a tetején.">Made with one shot of espresso and steamed milk, topped with a small amount of milk foam.</span><br><em data-en="Taste: Creamy and smooth, with a mild coffee flavor." data-hu="Íz: Krémes és sima, enyhe kávéízzel.">Taste: Creamy and smooth, with a mild coffee flavor.</em></p>
+                    <img src="assets/images/latte.png" alt="Pastel blue latte art" class="aero-glow" width="300" height="200">
+                    <p><strong data-en="Latte 'Aero Dream'" data-hu="Latte 'Álom Aero'">Latte 'Aero Dream'</strong><br>
+                    <span data-en="Smooth as a Windows 98 screensaver." 
+                          data-hu="Olyan sima, mint egy Windows 98 képernyővédő.">Smooth as a Windows 98 screensaver.</span><br>
+                    <em data-en="Taste: Cloud-soft with honey notes" data-hu="Íz: Felhő-puha mézes hangokkal">Taste: Cloud-soft with honey notes</em></p>
                 </div>
                 <div class="tile glossy">
-                    <div class="placeholder-box glossy"></div>
-                    <p><strong data-en="Cappuccino" data-hu="Cappuccino">Cappuccino</strong><br><span data-en="Similar to a latte but with equal parts espresso, steamed milk, and milk foam." data-hu="Hasonló a lattéhoz, de egyenlő arányban tartalmaz eszpresszót, gőzölt tejet és tejhabot.">Similar to a latte but with equal parts espresso, steamed milk, and milk foam.</span><br><em data-en="Taste: Balanced and frothy, with a stronger coffee flavor than a latte." data-hu="Íz: Kiegyensúlyozott és habos, erősebb kávéízzel, mint a latte.">Taste: Balanced and frothy, with a stronger coffee flavor than a latte.</em></p>
+                    <img src="assets/images/cappuccino.png" alt="Cappuccino with grid foam" class="aero-glow" width="300" height="200">
+                    <p><strong data-en="Cappuccino 'Y2K Foam'" data-hu="Cappuccino 'Y2K Hab'">Cappuccino 'Y2K Foam'</strong><br>
+                    <span data-en="Equal parts espresso, milk, and froth—like an RGB slider." 
+                          data-hu="Egyenlő arányban eszpresszó, tej és hab—mint egy RGB csúszka.">Equal parts espresso, milk, and froth—like an RGB slider.</span><br>
+                    <em data-en="Taste: Balanced with cocoa pixels" data-hu="Íz: Kiegyensúlyozott kakaó-pixelekkel">Taste: Balanced with cocoa pixels</em></p>
+                </div>
+            </div>
+
+            <!-- NON-COFFEE -->
+            <h3 data-en="> Peripheral Support (Other)" data-hu="> Perifériák (Egyéb)">> Peripheral Support (Other)</h3>
+            <div class="tile-grid">
+                <div class="tile glossy">
+                    <img src="assets/images/tea-soft-error.png" alt="Glowing blue herbal tea" class="crt-glow" width="300" height="200">
+                    <p><strong data-en="'Soft Error' Herbal Tea" data-hu="'Soft Error' Gyógytea">'Soft Error' Herbal Tea</strong><br>
+                    <span data-en="The blue screen of death for your anxiety." 
+                          data-hu="A kék halál képernyője a szorongásodnak.">The blue screen of death for your anxiety.</span><br>
+                    <em data-en="Taste: Chamomile + mint reboot" data-hu="Íz: Kamilla + menta újraindítás">Taste: Chamomile + mint reboot</em></p>
                 </div>
             </div>
         </div>
@@ -67,11 +96,11 @@
             <p class="description embossed" data-en="Enjoy the nostalgic atmosphere with our old-school 2000s computers, designed to help you study in a distraction-free environment. Our café's unique vaporwave style brings back the charm of the early internet era, making it a cozy and inspiring place to be." data-hu="Élvezd a nosztalgikus légkört régi, 2000-es évekbeli számítógépeinkkel, amelyek egy zavartalan tanulási környezetet biztosítanak. Kávézónk egyedi vaporwave stílusa visszahozza a korai internet korszak varázsát, így egy otthonos és inspiráló hellyé válik.">Enjoy the nostalgic atmosphere with our old-school 2000s computers, designed to help you study in a distraction-free environment. Our café's unique vaporwave style brings back the charm of the early internet era, making it a cozy and inspiring place to be.</p>
             <div class="vibe-grid">
                 <div class="vibe-tile glossy">
-                    <div class="placeholder-box glossy"></div>
+                    <img src="assets/images/vibe-computers.jpg" alt="Retro computers at Kiūt Café" class="glossy vibe-img" width="500" height="300">
                     <p data-en="No Distractions. No Noise. Just Focus." data-hu="Nincs Zavar. Nincs Zaj. Csak Fókusz.">No Distractions. No Noise. Just Focus.</p>
                 </div>
                 <div class="vibe-tile glossy">
-                    <div class="placeholder-box glossy"></div>
+                    <img src="assets/images/vibe-space.jpg" alt="Peaceful workspace at Kiūt Café" class="glossy vibe-img" width="500" height="300">
                     <p data-en="Take control of your time and mind in our peaceful space." data-hu="Vedd át az irányítást az időd és az elméd felett nyugodt terünkben.">Take control of your time and mind in our peaceful space.</p>
                 </div>
             </div>
@@ -94,27 +123,22 @@
             <h3 data-en="Where Is This Amazing Place Located?" data-hu="Hol Található Ez a Csodálatos Hely?">Where Is This Amazing Place Located?</h3>
             <p data-en="Budapest, Hungary" data-hu="Budapest, Magyarország">Budapest, Hungary</p>
             <div class="social-icons">
-                <a href="https://www.facebook.com/EnterTheKi" class="social-btn glossy" data-tooltip-en="Facebook" data-tooltip-hu="Facebook">F</a>
-                <a href="https://twitter.com/KiutNet" class="social-btn glossy" data-tooltip-en="Twitter" data-tooltip-hu="Twitter">T</a>
-                <a href="https://www.instagram.com/EnterTheKi" class="social-btn glossy" data-tooltip-en="Instagram" data-tooltip-hu="Instagram">I</a>
+                <a href="https://www.facebook.com/EnterTheKi" class="social-btn glossy" data-tooltip-en="Facebook" data-tooltip-hu="Facebook" aria-label="Facebook">F</a>
+                <a href="https://twitter.com/KiutNet" class="social-btn glossy" data-tooltip-en="Twitter" data-tooltip-hu="Twitter" aria-label="Twitter">T</a>
+                <a href="https://www.instagram.com/EnterTheKi" class="social-btn glossy" data-tooltip-en="Instagram" data-tooltip-hu="Instagram" aria-label="Instagram">I</a>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <p data-en="© 2025 Kiūt Café" data-hu="© 2025 Kiút Kávézó">© 2025 Kiūt Café</p>
-        <a href="/cdn-cgi/l/email-protection#b1d8dfd7def1dad8c4c59fdfd4c5" class="footer-link glossy" data-en="Contact Us" data-hu="Kapcsolat">Contact Us</a>
-    </footer>
-
     <div class="scanlines"></div>
     <nav class="music-nav">
         <div class="music-controls">
-            <button class="music-btn" id="stop">⏹</button>
-            <button class="music-btn" id="play">⏵</button>
+            <button class="music-btn" id="stop" aria-label="Stop">⏹</button>
+            <button class="music-btn" id="play" aria-label="Play">⏵</button>
         </div>
         <div class="music-track" id="track-name">Loading...</div>
         <div class="music-volume">
-            <input type="range" min="0" max="1" step="0.01" value="0.5" id="volume">
+            <input type="range" min="0" max="1" step="0.01" value="0.5" id="volume" aria-label="Volume">
         </div>
     </nav>
 
@@ -122,7 +146,6 @@
         <source src="https://ice1.somafm.com/vaporwaves-128-mp3" type="audio/mpeg">
         <p class="audio-fallback" data-en="Your browser does not support the audio element. Please use a modern browser to enjoy our vaporwave radio." data-hu="A böngésződ nem támogatja az audio elemet. Kérlek, használj modern böngészőt, hogy élvezhesd a vaporwave rádiót.">Your browser does not support the audio element.</p>
     </audio>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
