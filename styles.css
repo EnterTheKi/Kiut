@@ -7,10 +7,10 @@
 }
 
 body {
-    background: linear-gradient(135deg, #a8ffdb, #b3d9ff, #fff3e6); /* Green-blue to creamy beige */
+    background: linear-gradient(135deg, #c5e1d9, #d6e5f4, #f5e8d9); /* Muted green, blue, beige */
     min-height: 100vh;
     overflow-x: hidden;
-    color: #fff;
+    color: #333; /* Darker text for contrast */
 }
 
 /* Glass Navigation Bar */
@@ -19,9 +19,9 @@ body {
     top: 0;
     width: 100%;
     max-width: 1200px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;
@@ -32,10 +32,8 @@ body {
 .glass-nav .logo {
     font-size: 1.8em;
     font-weight: bold;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #00ff96, #00b4ff);
-    -webkit-background-clip: text;
-    color: transparent;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    color: #2a6a5e; /* Muted teal for 2007 vibe */
 }
 
 .glass-nav ul {
@@ -45,19 +43,19 @@ body {
 }
 
 .nav-btn {
-    color: #fff;
+    color: #2a6a5e;
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     transition: all 0.3s ease;
 }
 
 .nav-btn:hover {
-    background: rgba(0, 255, 150, 0.3);
+    background: rgba(106, 166, 155, 0.4); /* Muted teal hover */
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 255, 150, 0.4);
+    box-shadow: 0 4px 10px rgba(106, 166, 155, 0.5);
 }
 
 /* Sections */
@@ -76,27 +74,27 @@ body {
 
 h1 {
     font-size: 3em;
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #00ff96, #00b4ff);
-    -webkit-background-clip: text;
-    color: transparent;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: #2a6a5e; /* Darker muted teal */
     margin-bottom: 20px;
 }
 
 h2 {
     font-size: 2.5em;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: #3a7a6a; /* Slightly lighter muted teal */
     margin-bottom: 30px;
 }
 
 .subtitle, .description {
     font-size: 1.2em;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     margin-bottom: 40px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
     padding: 10px 20px;
     border-radius: 10px;
     backdrop-filter: blur(5px);
+    color: #333; /* Darker text for readability */
 }
 
 /* Placeholder Boxes */
@@ -104,11 +102,11 @@ h2 {
     width: 100%;
     max-width: 200px;
     height: 150px;
-    background: linear-gradient(135deg, rgba(0, 255, 150, 0.3), rgba(0, 150, 255, 0.3));
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: linear-gradient(135deg, rgba(180, 210, 205, 0.4), rgba(190, 205, 225, 0.4)); /* Muted pastels */
+    border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 15px;
     margin: 0 auto 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(5px);
 }
 
@@ -122,20 +120,20 @@ h2 {
 .cta-btn {
     display: inline-block;
     padding: 15px 30px;
-    background: linear-gradient(135deg, #00ff96, #00b4ff);
+    background: linear-gradient(135deg, #6aa69b, #7a9ab4); /* Muted teal to soft blue */
     border-radius: 15px;
     color: #fff;
     text-decoration: none;
     font-size: 1.2em;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.7);
     transition: all 0.3s ease;
 }
 
 .cta-btn:hover {
     transform: scale(1.05);
-    background: linear-gradient(135deg, #00ff96, #00d4ff);
-    box-shadow: 0 6px 20px rgba(0, 255, 150, 0.5);
+    background: linear-gradient(135deg, #7ab6a9, #8aaac4);
+    box-shadow: 0 6px 20px rgba(106, 166, 155, 0.5);
 }
 
 /* Tile Grids */
@@ -147,11 +145,11 @@ h2 {
 }
 
 .tile, .vibe-tile {
-    background: linear-gradient(135deg, rgba(0, 255, 150, 0.2), rgba(0, 150, 255, 0.2));
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: linear-gradient(135deg, rgba(180, 210, 205, 0.3), rgba(190, 205, 225, 0.3));
+    border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(5px);
     transition: all 0.3s ease;
     cursor: pointer;
@@ -159,12 +157,13 @@ h2 {
 
 .tile p, .vibe-tile p {
     font-size: 1.1em;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    color: #333; /* Darker text for contrast */
 }
 
 .tile:hover, .vibe-tile:hover {
     transform: scale(1.05);
-    background: linear-gradient(135deg, rgba(0, 255, 150, 0.4), rgba(0, 150, 255, 0.4));
+    background: linear-gradient(135deg, rgba(180, 210, 205, 0.5), rgba(190, 205, 225, 0.5));
 }
 
 /* Contact Form */
@@ -178,23 +177,23 @@ h2 {
 
 .glass-input {
     padding: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     backdrop-filter: blur(5px);
-    color: #fff;
+    color: #333;
     font-size: 1em;
     outline: none;
     transition: all 0.3s ease;
 }
 
 .glass-input:focus {
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 10px rgba(0, 255, 150, 0.3);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(106, 166, 155, 0.3);
 }
 
 .glass-input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+    color: #666; /* Darker placeholder for readability */
 }
 
 textarea.glass-input {
