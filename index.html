@@ -11,22 +11,77 @@
     <nav class="glass-nav">
         <div class="logo">[ESC] Kiút</div>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Vibe</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#home" class="nav-btn">Home</a></li>
+            <li><a href="#menu" class="nav-btn">Menu</a></li>
+            <li><a href="#vibe" class="nav-btn">Vibe</a></li>
+            <li><a href="#contact" class="nav-btn">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Main Content -->
-    <div class="container">
-        <h1>Your Escape Awaits</h1>
-        <div class="tile-grid">
-            <div class="tile"><p>Menu</p></div>
-            <div class="tile"><p>Vibe</p></div>
-            <div class="tile"><p>Visit Us</p></div>
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="container">
+            <h1>Your Escape Awaits</h1>
+            <p class="subtitle">Step into a glossy tomorrow with every sip.</p>
+            <div class="hero-image">
+                <img src="placeholder-hero.jpg" alt="Glossy coffee cup with latte art">
+            </div>
+            <a href="#menu" class="cta-btn">Explore the Cafe</a>
         </div>
-    </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section">
+        <div class="container">
+            <h2>Menu</h2>
+            <div class="tile-grid">
+                <div class="tile">
+                    <img src="placeholder-coffee.jpg" alt="Glossy coffee cup">
+                    <p>Signature Latte</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder-pastry.jpg" alt="Shiny pastry">
+                    <p>Aero Croissant</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder-tea.jpg" alt="Glass tea cup">
+                    <p>Crystal Tea</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vibe Section -->
+    <section id="vibe" class="section">
+        <div class="container">
+            <h2>Vibe</h2>
+            <p class="description">Glossy counters, green escapes, endless sips.</p>
+            <div class="vibe-grid">
+                <div class="vibe-tile">
+                    <img src="placeholder-plant.jpg" alt="Tropical plant in sleek pot">
+                    <p>Nature Meets Tech</p>
+                </div>
+                <div class="vibe-tile">
+                    <img src="placeholder-counter.jpg" alt="Glossy cafe counter">
+                    <p>Sleek Serenity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact</h2>
+            <p class="description">Drop us a line—your escape starts here.</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Name" class="glass-input">
+                <input type="email" placeholder="Email" class="glass-input">
+                <textarea placeholder="Message" class="glass-input"></textarea>
+                <button type="submit" class="cta-btn">Send</button>
+            </form>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
