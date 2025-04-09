@@ -2,85 +2,127 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[ESC] Kiút - Your Cafe Escape</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>K i ū t - Your Cafe Escape</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/assets/images/kiut-fav.png">
 </head>
-<body>
-    <!-- Glassy Navigation Bar -->
+<body data-lang="en">
     <nav class="glass-nav">
-        <div class="logo">[ESC] Kiút</div>
-        <ul>
-            <li><a href="#home" class="nav-btn">Home</a></li>
-            <li><a href="#menu" class="nav-btn">Menu</a></li>
-            <li><a href="#vibe" class="nav-btn">Vibe</a></li>
-            <li><a href="#contact" class="nav-btn">Contact</a></li>
+        <div class="logo">[ESC] K i ū t</div>
+        <div class="hamburger">☰</div>
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-btn glossy" data-en="Home" data-hu="Kezdőlap">Home</a></li>
+            <li><a href="#coffees" class="nav-btn glossy" data-en="Coffees" data-hu="Kávék">Coffees</a></li>
+            <li><a href="#vibe" class="nav-btn glossy" data-en="Vibe" data-hu="Hangulat">Vibe</a></li>
+            <li><a href="#visit" class="nav-btn glossy" data-en="Visit" data-hu="Látogatás">Visit</a></li>
         </ul>
     </nav>
+    <div class="language-switcher">
+        <button class="lang-btn glossy" data-lang="en">EN</button>
+        <button class="lang-btn glossy" data-lang="hu">HU</button>
+    </div>
+    <button class="dark-mode-toggle glossy" title="Toggle Retro Night Shift" aria-label="Toggle Retro Night Shift">☀</button>
 
-    <!-- Home Section -->
     <section id="home" class="section">
         <div class="container">
-            <h1>Your Escape Awaits</h1>
-            <p class="subtitle">Step into a glossy tomorrow with every sip.</p>
-            <div class="placeholder-box hero-placeholder"></div>
-            <a href="#menu" class="cta-btn">Explore the Cafe</a>
+            <h1 data-en="Find Your Focus in the Heart of Hungary" data-hu="Találd meg a fókuszodat Magyarország szívében">Find Your Focus in the Heart of Hungary</h1>
+            <p class="subtitle embossed" data-en="Welcome to Kiūt Café, a quiet place where you can escape the noise and distractions of the outside world. Here, you can concentrate fully and get your best work done." data-hu="Üdvözlünk a Kiút Kávézóban, egy csendes helyen, ahol elmenekülhetsz a külvilág zajától és zavaró tényezőitől. Itt teljes mértékben koncentrálhatsz és elvégezheted a legjobb munkádat.">Welcome to Kiūt Café, a quiet place where you can escape the noise and distractions of the outside world. Here, you can concentrate fully and get your best work done.</p>
+            <div class="placeholder-box glossy hero-placeholder"></div>
+            <a href="#visit" class="cta-btn glossy" data-en="Visit The Nostalgia Café" data-hu="Látogasd meg a Nosztalgia Kávézót">Visit The Nostalgia Café</a>
         </div>
     </section>
 
-    <!-- Menu Section -->
-    <section id="menu" class="section">
+    <section id="coffees" class="section">
         <div class="container">
-            <h2>Menu</h2>
+            <h2 data-en="Coffees" data-hu="Kávék">Coffees</h2>
+            <h3 data-en="Strong Coffees" data-hu="Erős Kávék">Strong Coffees</h3>
             <div class="tile-grid">
-                <div class="tile">
-                    <div class="placeholder-box"></div>
-                    <p>Signature Latte</p>
+                <div class="tile glossy">
+                    <div class="placeholder-box glossy"></div>
+                    <p><strong data-en="Espresso" data-hu="Eszpresszó">Espresso</strong><br><span data-en="A strong, concentrated coffee made by forcing hot water through finely-ground coffee beans. It's the base for many other coffee drinks." data-hu="Erős, koncentrált kávé, amelyet forró víz finomra őrölt kávébabokon keresztül történő préselésével készítenek. Sok más kávéital alapja.">A strong, concentrated coffee made by forcing hot water through finely-ground coffee beans. It's the base for many other coffee drinks.</span><br><em data-en="Taste: Rich and intense with a bold flavor." data-hu="Íz: Gazdag és intenzív, merész ízzel.">Taste: Rich and intense with a bold flavor.</em></p>
                 </div>
-                <div class="tile">
-                    <div class="placeholder-box"></div>
-                    <p>Aero Croissant</p>
+                <div class="tile glossy">
+                    <div class="placeholder-box glossy"></div>
+                    <p><strong data-en="Ristretto" data-hu="Ristretto">Ristretto</strong><br><span data-en="A shorter, more concentrated shot of espresso, made with the same amount of coffee but half the amount of water." data-hu="Rövidebb, koncentráltabb eszpresszó, ugyanannyi kávéval, de feleannyi vízzel elkészítve.">A shorter, more concentrated shot of espresso, made with the same amount of coffee but half the amount of water.</span><br><em data-en="Taste: Stronger and more intense than a regular espresso, with a richer flavor." data-hu="Íz: Erősebb és intenzívebb, mint a szokásos eszpresszó, gazdagabb ízzel.">Taste: Stronger and more intense than a regular espresso, with a richer flavor.</em></p>
                 </div>
-                <div class="tile">
-                    <div class="placeholder-box"></div>
-                    <p>Crystal Tea</p>
+            </div>
+            <h3 data-en="Normal Coffees" data-hu="Normál Kávék">Normal Coffees</h3>
+            <div class="tile-grid">
+                <div class="tile glossy">
+                    <div class="placeholder-box glossy"></div>
+                    <p><strong data-en="Latte" data-hu="Latte">Latte</strong><br><span data-en="Made with one shot of espresso and steamed milk, topped with a small amount of milk foam." data-hu="Egy adag eszpresszóból és gőzölt tejből készül, kevés tejhabbal a tetején.">Made with one shot of espresso and steamed milk, topped with a small amount of milk foam.</span><br><em data-en="Taste: Creamy and smooth, with a mild coffee flavor." data-hu="Íz: Krémes és sima, enyhe kávéízzel.">Taste: Creamy and smooth, with a mild coffee flavor.</em></p>
+                </div>
+                <div class="tile glossy">
+                    <div class="placeholder-box glossy"></div>
+                    <p><strong data-en="Cappuccino" data-hu="Cappuccino">Cappuccino</strong><br><span data-en="Similar to a latte but with equal parts espresso, steamed milk, and milk foam." data-hu="Hasonló a lattéhoz, de egyenlő arányban tartalmaz eszpresszót, gőzölt tejet és tejhabot.">Similar to a latte but with equal parts espresso, steamed milk, and milk foam.</span><br><em data-en="Taste: Balanced and frothy, with a stronger coffee flavor than a latte." data-hu="Íz: Kiegyensúlyozott és habos, erősebb kávéízzel, mint a latte.">Taste: Balanced and frothy, with a stronger coffee flavor than a latte.</em></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Vibe Section -->
     <section id="vibe" class="section">
         <div class="container">
-            <h2>Vibe</h2>
-            <p class="description">Glossy counters, green escapes, endless sips.</p>
+            <h2 data-en="Step Back in Time with Our 2000s Vaporwave Vibe" data-hu="Lépj Vissza az Időben a 2000-es Évek Vaporwave Hangulatával">Step Back in Time with Our 2000s Vaporwave Vibe</h2>
+            <p class="description embossed" data-en="Enjoy the nostalgic atmosphere with our old-school 2000s computers, designed to help you study in a distraction-free environment. Our café's unique vaporwave style brings back the charm of the early internet era, making it a cozy and inspiring place to be." data-hu="Élvezd a nosztalgikus légkört régi, 2000-es évekbeli számítógépeinkkel, amelyek egy zavartalan tanulási környezetet biztosítanak. Kávézónk egyedi vaporwave stílusa visszahozza a korai internet korszak varázsát, így egy otthonos és inspiráló hellyé válik.">Enjoy the nostalgic atmosphere with our old-school 2000s computers, designed to help you study in a distraction-free environment. Our café's unique vaporwave style brings back the charm of the early internet era, making it a cozy and inspiring place to be.</p>
             <div class="vibe-grid">
-                <div class="vibe-tile">
-                    <div class="placeholder-box"></div>
-                    <p>Nature Meets Tech</p>
+                <div class="vibe-tile glossy">
+                    <div class="placeholder-box glossy"></div>
+                    <p data-en="No Distractions. No Noise. Just Focus." data-hu="Nincs Zavar. Nincs Zaj. Csak Fókusz.">No Distractions. No Noise. Just Focus.</p>
                 </div>
-                <div class="vibe-tile">
-                    <div class="placeholder-box"></div>
-                    <p>Sleek Serenity</p>
+                <div class="vibe-tile glossy">
+                    <div class="placeholder-box glossy"></div>
+                    <p data-en="Take control of your time and mind in our peaceful space." data-hu="Vedd át az irányítást az időd és az elméd felett nyugodt terünkben.">Take control of your time and mind in our peaceful space.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="visit" class="section">
         <div class="container">
-            <h2>Contact</h2>
-            <p class="description">Drop us a line—your escape starts here.</p>
-            <form class="contact-form">
-                <input type="text" placeholder="Name" class="glass-input">
-                <input type="email" placeholder="Email" class="glass-input">
-                <textarea placeholder="Message" class="glass-input"></textarea>
-                <button type="submit" class="cta-btn">Send</button>
-            </form>
+            <h2 data-en="Visit The Nostalgia Café" data-hu="Látogasd meg a Nosztalgia Kávézót">Visit The Nostalgia Café</h2>
+            <p class="description embossed" data-en="Imagine stepping into a cozy café in the heart of Hungary, where the hustle and bustle of the outside world fades away. The gentle hum of old-school computers adds to the charm, creating a unique and distraction-free environment. Soft instrumental lofi, 90s, and 2000s chill music plays in the background, setting the perfect tone for concentration and relaxation." data-hu="Képzeld el, hogy belépsz egy hangulatos kávézóba Magyarország szívében, ahol a külvilág nyüzsgése elhalványul. A régi számítógépek halk zümmögése növeli a varázst, egyedi és zavartalan környezetet teremtve. Lágy instrumentális lo-fi, 90-es és 2000-es évek chill zenéje szól a háttérben, tökéletes hangulatot teremtve a koncentrációhoz és pihenéshez.">Imagine stepping into a cozy café in the heart of Hungary, where the hustle and bustle of the outside world fades away. The gentle hum of old-school computers adds to the charm, creating a unique and distraction-free environment. Soft instrumental lofi, 90s, and 2000s chill music plays in the background, setting the perfect tone for concentration and relaxation.</p>
+            <h3 data-en="Opening Hours" data-hu="Nyitvatartási Idő">Opening Hours</h3>
+            <ul class="hours">
+                <li data-en="Monday: 9:00 - 17:00" data-hu="Hétfő: 9:00 - 17:00">Monday: 9:00 - 17:00</li>
+                <li data-en="Tuesday: 9:00 - 17:00" data-hu="Kedd: 9:00 - 17:00">Tuesday: 9:00 - 17:00</li>
+                <li data-en="Wednesday: 9:00 - 17:00" data-hu="Szerda: 9:00 - 17:00">Wednesday: 9:00 - 17:00</li>
+                <li data-en="Thursday: 9:00 - 17:00" data-hu="Csütörtök: 9:00 - 17:00">Thursday: 9:00 - 17:00</li>
+                <li data-en="Friday: 9:00 - 17:00" data-hu="Péntek: 9:00 - 17:00">Friday: 9:00 - 17:00</li>
+                <li data-en="Saturday & Sunday: 9:00 - 13:00" data-hu="Szombat és Vasárnap: 9:00 - 13:00">Saturday & Sunday: 9:00 - 13:00</li>
+            </ul>
+            <h3 data-en="Where Is This Amazing Place Located?" data-hu="Hol Található Ez a Csodálatos Hely?">Where Is This Amazing Place Located?</h3>
+            <p data-en="Budapest, Hungary" data-hu="Budapest, Magyarország">Budapest, Hungary</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/EnterTheKi" class="social-btn glossy" data-tooltip-en="Facebook" data-tooltip-hu="Facebook">F</a>
+                <a href="https://twitter.com/KiutNet" class="social-btn glossy" data-tooltip-en="Twitter" data-tooltip-hu="Twitter">T</a>
+                <a href="https://www.instagram.com/EnterTheKi" class="social-btn glossy" data-tooltip-en="Instagram" data-tooltip-hu="Instagram">I</a>
+            </div>
         </div>
     </section>
 
+    <footer class="footer">
+        <p data-en="© 2025 Kiūt Café" data-hu="© 2025 Kiút Kávézó">© 2025 Kiūt Café</p>
+        <a href="/cdn-cgi/l/email-protection#b1d8dfd7def1dad8c4c59fdfd4c5" class="footer-link glossy" data-en="Contact Us" data-hu="Kapcsolat">Contact Us</a>
+    </footer>
+
+    <div class="scanlines"></div>
+    <nav class="music-nav">
+        <div class="music-controls">
+            <button class="music-btn" id="stop">⏹</button>
+            <button class="music-btn" id="play">⏵</button>
+        </div>
+        <div class="music-track" id="track-name">Loading...</div>
+        <div class="music-volume">
+            <input type="range" min="0" max="1" step="0.01" value="0.5" id="volume">
+        </div>
+    </nav>
+
+    <audio id="radio-player" preload="none">
+        <source src="https://ice1.somafm.com/vaporwaves-128-mp3" type="audio/mpeg">
+        <p class="audio-fallback" data-en="Your browser does not support the audio element. Please use a modern browser to enjoy our vaporwave radio." data-hu="A böngésződ nem támogatja az audio elemet. Kérlek, használj modern böngészőt, hogy élvezhesd a vaporwave rádiót.">Your browser does not support the audio element.</p>
+    </audio>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
